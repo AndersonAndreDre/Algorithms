@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+  
+
+struct Node {
+    int data;
+    struct Node *left, *right;
+};
+  
+
+Node* newNode(int data)
+{
+    Node* temp = new Node;
+    temp->data = data;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+  
+/* Given a binary tree, print its nodes according to the
+"bottom-up" postorder traversal. */
+void printPreorder(struct Node* node)
+{
+    if (node == NULL)
+        return;
+  
+    /* first print data of node */
+    cout << node->data << " ";
+  
+    /* then recur on left subtree */
+    printPreorder(node->left);
+  
+    /* now recur on right subtree */
+    printPreorder(node->right);
+}
+int main(){
+    
+    
+    struct Node* root= newNode(1);
+    root->left=newNode(2);
+    root->right=newNode(3);
+   root->right->right=newNode(4);
+   root->right->left=newNode(5);
+    
+    printPreorder(root);
+    
+    
+    
+    
+    
+    
+}
