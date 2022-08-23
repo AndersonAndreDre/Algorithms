@@ -1,0 +1,31 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <array>
+using namespace std;
+int search(int arr[], int n,int x){
+    
+    for(int i=0;i<n;i++){
+        if(arr[i]==x)
+        return i;
+    }
+    return -1;
+    
+}
+
+int main() {
+    // Write C++ code here
+    int arr[7]={1,4,7,14,68,90,123};
+    int x=12;
+    int n=sizeof(arr);
+    
+    int res=search(arr,n,x);
+    if(res==-1){
+        cout<<"eLEMENT IS NOT IN  LIST"<<endl;
+        
+    }
+    else{
+        cout<<"element is at :"<<res<<endl;
+    }
+
+    return 0;
+}
